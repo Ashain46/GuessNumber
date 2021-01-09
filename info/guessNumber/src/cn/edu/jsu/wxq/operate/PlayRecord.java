@@ -45,7 +45,8 @@ public class PlayRecord extends JFrame {
 	}*/
 
 	/**
-	 * Create the frame.
+	 * 显示个人历史游戏记录.
+	 * @param name the String传递用户名
 	 */
 	public PlayRecord(String name) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

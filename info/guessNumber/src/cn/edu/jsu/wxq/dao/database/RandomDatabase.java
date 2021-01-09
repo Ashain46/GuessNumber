@@ -3,7 +3,7 @@ package cn.edu.jsu.wxq.dao.database;
 import java.util.Random;
 
 /**
- 在数据库中随机生成一万条数据
+ 随机生成各个数据
  */
 public class RandomDatabase {
 	// 百家姓
@@ -38,7 +38,7 @@ public class RandomDatabase {
 				"南宫", "第五", "公仪", "公乘", "太史", "仲长", "叔孙", "屈突", "尔朱", "东乡", "相里", "胡母", "司城", "张廖", "雍门", "毋丘", "贺兰", "綦毋",
 				"屋庐", "独孤", "南郭", "北宫", "王孙" };
 		/**
-		 * 随机名字
+		 * 随机生成名字
 		 * 
 		 * @return 返回结果
 		 */
@@ -70,7 +70,7 @@ public class RandomDatabase {
 		}
 		
 		/**
-		 * 随机账号
+		 * 随机生成账号
 		 * 
 		 * @return 返回结果
 		 */
@@ -92,7 +92,7 @@ public class RandomDatabase {
 		
 		
 		/**
-	     * 随机6-16位密码
+	     * 随机生成6-16位密码
 	     * @return 返回结果
 	     */
 	    public static String getPassword() {
@@ -116,7 +116,7 @@ public class RandomDatabase {
 	    }
 	    
 	    /**
-	     * 随机积分
+	     * 随机生成积分
 	     * @return 返回结果
 	     */
 	    public int getInteral() {
@@ -124,7 +124,7 @@ public class RandomDatabase {
 	    	return number.nextInt(70000)+(-30000);
 		}
 	    /**
-	     * 随机鲜花
+	     * 随机生成鲜花
 	     * @return 返回结果
 	     */
 	    public int getFlower() {
@@ -133,7 +133,7 @@ public class RandomDatabase {
 		}
 	    
 	    /**
-	     * 随机单次游戏积分
+	     * 随机生成单次游戏积分
 	     * @return 返回结果
 	     */
 	    public int getInteralOne() {
@@ -141,7 +141,7 @@ public class RandomDatabase {
 	    	return number.nextInt(500)+0;
 		}
 	    /**
-	     * 随机单次游戏积分
+	     * 随机生成游戏时间
 	     * @return 返回结果
 	     */
 	    public String getTime() {

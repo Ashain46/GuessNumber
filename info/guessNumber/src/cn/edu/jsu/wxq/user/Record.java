@@ -3,17 +3,22 @@ package cn.edu.jsu.wxq.user;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import org.junit.Test;
+/**
+ * 封装record表
+ * @author 86135
+ *
+ */
 public class Record {
 	private String name;//用户名
 	private int integral;//用户积分
 	private String playtime;//用户游戏记录
 	public Record() {};
 	/**
-	 * @param name
-	 * @param account
-	 * @param password
-	 * @param integral
-	 * @param flower
+	 * 用户游戏记录
+	 * @param name the String昵称
+	 * @param integral 积分
+	 * @param playtime the Sting游戏时间
 	 */
 	public Record(String name,int integral,String playtime) {
 		this.name=name;
@@ -40,7 +45,10 @@ public class Record {
 		this.integral=integral;
 	}
 
-	//获取本地时间
+	/**
+	 * 获取本地时间
+	 *@return time the String返回本地时间
+	 */
 		public static String getTime() {
 			Calendar c = new GregorianCalendar();
 

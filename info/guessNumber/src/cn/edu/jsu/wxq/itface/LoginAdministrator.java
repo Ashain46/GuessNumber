@@ -31,6 +31,7 @@ public class LoginAdministrator extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param args the String[]管理员登录
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -46,7 +47,7 @@ public class LoginAdministrator extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * 管理员登录.
 	 */
 	public LoginAdministrator() {
 		

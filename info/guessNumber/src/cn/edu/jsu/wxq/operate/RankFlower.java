@@ -38,24 +38,11 @@ public class RankFlower extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RankFlower frame = new RankFlower();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
+
 
 	/**
-	 * Create the frame.
+	 * 显示鲜花排行榜.
+      * @param user1 the User传递用户信息
 	 */
 	public RankFlower(User user1) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

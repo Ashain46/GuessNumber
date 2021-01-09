@@ -49,8 +49,9 @@ public class PersonalInterface extends JFrame {
 	}*/
 
 	/**
-	 * Create the frame.
-	 * @throws SQLException 
+	 * 用户登录进入后,个人界面
+	 * @param user the User用户
+	 *  
 	 */
 	
 	public PersonalInterface(User user){
@@ -172,6 +173,20 @@ public class PersonalInterface extends JFrame {
 		getContentPane().add(btnNewButton_4);
 		btnNewButton_4.setContentAreaFilled(false);
 		btnNewButton_4.setBorderPainted(false);
+		
+		JButton button_1 = new JButton("刷新");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				PersonalInterface personalInterface=new PersonalInterface(new ModifyInformation(user).getUser());
+				personalInterface.setVisible(true);
+			}
+		});
+		button_1.setFont(new Font("楷体", Font.PLAIN, 20));
+		button_1.setBounds(384, 300, 113, 27);
+		getContentPane().add(button_1);
+		button_1.setContentAreaFilled(false);
+		button_1.setBorderPainted(false);
 		
 		JLabel label_3 = new JLabel("");
 		label_3.setIcon(new ImageIcon(PersonalInterface.class.getResource("/img/zzpic17012.jpg")));

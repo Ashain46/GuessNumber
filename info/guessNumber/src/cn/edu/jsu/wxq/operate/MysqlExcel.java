@@ -11,7 +11,11 @@ import jxl.Workbook;
 import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
-
+/**
+ * 数据库导出Excel
+ * @author 86135
+ *
+ */
 public class MysqlExcel {
 	// 创建可写入的Excel工作薄
 	private static String fileName = "E:\\数字猜一猜-游戏记录表.xls";

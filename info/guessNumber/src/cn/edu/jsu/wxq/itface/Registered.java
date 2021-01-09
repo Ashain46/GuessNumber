@@ -38,7 +38,8 @@ public class Registered extends JDialog {
 	private JTextField textField_3;
 
 	/** 
-	 * Launch the application.
+	 * ×¢²á.
+	 * @param args the String[]×¢²á
 	 */
 	public static void main(String[] args) {
 		try {
@@ -51,7 +52,7 @@ public class Registered extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * ×¢²á.
 	 */
 	public Registered() {
 		setTitle("Êý×Ö²ÂÒ»²Â-×¢²á");

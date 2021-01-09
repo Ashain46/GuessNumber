@@ -49,7 +49,7 @@ public class AllUser extends JFrame {
 	}
 
 	/**
-	 * 定义构造方法创建窗体及组件.
+	 * 显示全部用户信息.
 	 */
 	public AllUser() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置窗体关闭按钮
@@ -179,7 +179,6 @@ public class AllUser extends JFrame {
 							
 							  while(table.getSelectedRow() != -1)//删除多行数据
 									 model.removeRow(table.convertRowIndexToModel(table.getSelectedRow()));
-						    //从表格数据中删除行,model1为DefaultTableModel类型，排序后不能直接使用表格的getSelectedRow方法获取被选中的行
 						  } else {
 						    JOptionPane.showMessageDialog(null, "请选择要删除的行");
 						  }

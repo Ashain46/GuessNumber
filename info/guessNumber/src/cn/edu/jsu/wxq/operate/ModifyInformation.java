@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.junit.Test;
+
 import cn.edu.jsu.wxq.dao.database.SqlDao;
 import cn.edu.jsu.wxq.user.User;
 
@@ -24,7 +26,7 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 
 public class ModifyInformation extends JFrame {
-
+	User user1;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -54,9 +56,11 @@ public class ModifyInformation extends JFrame {
 	}*/
 
 	/**
-	 * Create the frame.
+	 * 修改用户信息界面.
+	 * @param user the User传递用户信息
 	 */
 	public ModifyInformation(User user) {
+		user1=user;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(720,450, 393, 300);
 		contentPane = new JPanel();
@@ -159,11 +163,13 @@ public class ModifyInformation extends JFrame {
 					String sql=null;
 					if(radioButton.isSelected()) {
 						sql="update user set name =? where account=?";
-						JOptionPane.showMessageDialog(null, "修改成功!当前用户名为"+user.getName());//弹出提示窗口
+						JOptionPane.showMessageDialog(null, "修改成功!当前用户名为"+textField_1.getText());//弹出提示窗口
+						user1.setName(textField_1.getText());
 					}
 					else {
 						sql="update user set password =? where account=?";
-						JOptionPane.showMessageDialog(null, "修改成功!当前密码为"+user.getPassword());//弹出提示窗口
+						JOptionPane.showMessageDialog(null, "修改成功!当前密码为"+textField_1.getText());//弹出提示窗口
+						user1.setName(textField_1.getText());
 					}
 					String []str= {textField_1.getText(),user.getAccount()};
 					SqlDao.modifyUser1(sql,str);
@@ -197,5 +203,8 @@ public class ModifyInformation extends JFrame {
 		label_5.setBounds(0, 0, 387, 266);
 		contentPane.add(label_5);
 		
+	}
+	public User getUser() {
+		return user1;
 	}
 }

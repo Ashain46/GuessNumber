@@ -9,9 +9,21 @@ import java.util.List;
 import java.util.Random;
 
 import cn.edu.jsu.wxq.user.User;
-
+/**
+ * 
+ * 增加一万条数据到数据库中
+ *@author 文雪茜
+ */
 public class DataInsert {
-	public static void InsertUser(Connection con,RandomDatabase rdd) throws SQLException {
+	/**
+	 * 增加一万条数据到user表中
+	 * @param rdd the Connection用来连接数据库
+	 * @param con the RandomDatabase传递随机生成的数* 
+	 * @exception SQLException On input error.
+     * @see SQLException
+	 */
+	public static void insertUser(Connection con,RandomDatabase rdd) throws SQLException {
+		
 		String sql="insert into user(name,account,password,integral,flower) values(?,?,?,?,?)";
 		SqlDao sqlDao=new SqlDao();
 			PreparedStatement pre = con.prepareStatement(sql);
@@ -25,7 +37,14 @@ public class DataInsert {
 			}
 			pre.executeBatch();
 	}
-	public static void InsertRecord(Connection con,RandomDatabase rdd) throws SQLException {
+	/**
+	 * 增加一万条数据到record表中,record表和user表的共同信息为name
+	 * @param rdd the Connection用来连接数据库
+	 * @param con the RandomDatabase传递随机生成的数据
+	 * @exception SQLException On input error.
+     * @see SQLException
+	 */
+	public static void insertRecord(Connection con,RandomDatabase rdd) throws SQLException {
 		List<User> list=new SqlDao().getAllUser();
 		String sql="insert into record(name,integral,playtime) values(?,?,?)";
 			PreparedStatement pre = con.prepareStatement(sql);
@@ -38,6 +57,10 @@ public class DataInsert {
 			}
 			pre.executeBatch();
 	}
+	/**
+	 * 
+	 * @param args the String增加一万条数据执行
+	 */
 	public static void main(String[] args) {
 		RandomDatabase randomDatabase=new RandomDatabase();
 		Connection connection = null;
@@ -48,8 +71,8 @@ public class DataInsert {
 			e.printStackTrace();
 		}
 		try {
-			//InsertUser(connection, randomDatabase);
-			InsertRecord(connection, randomDatabase);
+			//insertUser(connection, randomDatabase);
+			insertRecord(connection, randomDatabase);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

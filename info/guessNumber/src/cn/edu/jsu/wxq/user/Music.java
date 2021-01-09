@@ -2,8 +2,14 @@ package cn.edu.jsu.wxq.user;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 
-import javazoom.jl.player.Player;
+import org.junit.Test;
 
+import javazoom.jl.player.Player;
+/**
+ * 设置音乐播放线程
+ * @author 86135
+ *
+ */
 public class Music extends Thread {
 	private String fileName;
 	public void setFileName(String fileName1) {

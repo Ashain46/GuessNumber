@@ -51,24 +51,10 @@ public class GameBegin extends JFrame {
 	private JLabel label_1;
 	private JLabel label_3;
 
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GameTest frame = new GameTest();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
 
 	/**
-	 * Create the frame.
+	 * 游戏
+	 * @param user the User用来传递用户信息
 	 */
 	public GameBegin(User user) {
 		integral=user.getIntegral();

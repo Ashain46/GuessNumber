@@ -37,27 +37,11 @@ public class RankIntegral extends JFrame {
 	TableModel model;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RankIntegral frame = new RankIntegral();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
+	
 
 	/**
-	 * Create the frame.
-	 */
-	/**
-	 * 
+	 * 显示积分排行榜.
+	 * @param user1 the User传递用户信息
 	 */
 	public RankIntegral(User user1) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

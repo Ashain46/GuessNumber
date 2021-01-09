@@ -36,6 +36,7 @@ public class LoginAccount extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param args the String []用户登录
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -51,7 +52,7 @@ public class LoginAccount extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * 用户登录.
 	 */
 	public LoginAccount() {
 		getContentPane().setBackground(new Color(255, 255, 255));

@@ -15,9 +15,16 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
 import cn.edu.jsu.wxq.user.User;
-
+/**
+ * 注册时,如果注册成功,将注册信息存入文本文件中
+ */
 public class FileOperate {
 	final static File file = new File("e:/usertest.txt");
+	/**
+	 * 增加用户信息到文本文件
+	 * @param user the String用户信息
+	 * @return boolean boolean是用来返回
+	 */
 	  public static boolean addUser(String user) {//定义增加用户的方法，user为内容
 		    try(FileWriter fw=new FileWriter(file,true)){
 		      fw.write(user);
@@ -38,6 +45,10 @@ public class FileOperate {
 			e.printStackTrace();
 		}//实例化字符文件流
 	}
+	/**
+	 * 初始化表格数据
+	 * @return 返回表格数据
+	 */
 	public static Vector<Vector> initTable1() {//初始化表格数据
 		  Vector<Vector> rows=new Vector<Vector>();//创建行数据容器
 		  try(FileReader fr=new FileReader(file);
@@ -56,7 +67,7 @@ public class FileOperate {
 		  }catch(Exception e1) {e1.printStackTrace();}
 		  return rows;
 	}//返回所有的行
-	public static DefaultTableModel getModel() {
+	/*public static DefaultTableModel getModel() {
 		Vector<String> titles1 = new Vector<String>();
 		Collections.addAll(titles1,  "昵称", "账号", "密码","积分","鲜花");//定义表格列头
 		DefaultTableModel model1 = new DefaultTableModel(FileOperate.initTable1(), titles1) {//使用Vector装载表格数据模型，覆写getColumnClass方法，实现按数值排序
@@ -75,7 +86,7 @@ public class FileOperate {
 		TableRowSorter sorter = new TableRowSorter<DefaultTableModel>(FileOperate.getModel());//设置表格模型排序器
 		table.setRowSorter(sorter);//设置表格排序器
 		table.setModel(FileOperate.getModel());//设置表格数据模型
-	}
+	}*/
 	public static void newFile(JTable table)
 	   {
 		   

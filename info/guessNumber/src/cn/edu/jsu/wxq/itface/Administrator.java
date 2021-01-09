@@ -34,6 +34,7 @@ public class Administrator extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param args the String[]管理员主界面
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -49,7 +50,7 @@ public class Administrator extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 *管理员主界面
 	 */
 	public Administrator() {
 		
