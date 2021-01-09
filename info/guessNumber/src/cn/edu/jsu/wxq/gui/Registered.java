@@ -1,4 +1,4 @@
-package cn.edu.jsu.wxq.itface;
+package cn.edu.jsu.wxq.gui;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -9,8 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import cn.edu.jsu.wxq.dao.database.SqlIInfo;
-import cn.edu.jsu.wxq.IO.FileOperate;
-import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
+import cn.edu.jsu.wxq.io.FileOperate;
+import cn.edu.jsu.wxq.dao.database.DatabaseConnection;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;

@@ -1,4 +1,4 @@
-package cn.edu.jsu.wxq.IO;
+package cn.edu.jsu.wxq.io;
 
 import java.io.File;
 import java.sql.ResultSet;
@@ -8,7 +8,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
+import cn.edu.jsu.wxq.dao.database.DatabaseConnection;
 import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.user.Record;
 import jxl.Sheet;

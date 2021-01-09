@@ -1,4 +1,4 @@
-package cn.edu.jsu.wxq.IO;
+package cn.edu.jsu.wxq.io;
 
 import java.io.File;
 import java.util.List;

@@ -26,7 +26,7 @@ public class SqlIInfo {
 	public static Vector<Vector> getAll(){
 		Vector<Vector> rows=new Vector<Vector>();//定义要返回的所有记录集合
 		try {
-			ConnectionDatabase conn=new ConnectionDatabase();
+			DatabaseConnection conn=new DatabaseConnection();
 		    String sql="select * from user";
 		    ResultSet result=SqlIInfo.search(sql,null);
 			while(result.next()) {
@@ -53,7 +53,7 @@ public class SqlIInfo {
 	public static Vector<Vector> getAll1(String sql,String str){
 		Vector<Vector> rows=new Vector<Vector>();//定义要返回的所有记录集合
 		try {
-			ConnectionDatabase conn=new ConnectionDatabase();
+			DatabaseConnection conn=new DatabaseConnection();
 			Connection con=conn.getConnection();
 		    ResultSet result=SqlIInfo.search(sql,str);
 			while(result.next()) {
@@ -77,7 +77,7 @@ public class SqlIInfo {
 	public static List<User> getAllUser(){
 		List<User> list=new ArrayList<>();//定义要返回的所有记录集合
 		try {
-			ConnectionDatabase conn=new ConnectionDatabase();
+			DatabaseConnection conn=new DatabaseConnection();
 		    String sql="select * from user";
 		    ResultSet result=SqlIInfo.search(sql,null);
 			while(result.next()) {
@@ -102,7 +102,7 @@ public class SqlIInfo {
 	public static List<Record> getAllRecord(){
 		List<Record> list=new ArrayList<>();//定义要返回的所有记录集合
 		try {
-			ConnectionDatabase conn=new ConnectionDatabase();
+			DatabaseConnection conn=new DatabaseConnection();
 		    String sql="select * from record";
 		    ResultSet result=SqlIInfo.search(sql,null);
 			while(result.next()) {
@@ -126,7 +126,7 @@ public class SqlIInfo {
 		Vector<Vector> rows=new Vector<Vector>();//定义要返回的所有记录集合
 		int i=0;
 		try {
-			ConnectionDatabase conn=new ConnectionDatabase();
+			DatabaseConnection conn=new DatabaseConnection();
 		    ResultSet result=SqlIInfo.search(sql,null);
 			while(result.next()) {
 				Vector row=new Vector();//定义行数据
@@ -153,7 +153,7 @@ public class SqlIInfo {
 	 */
 	public static User selectUser(String account) throws SQLException ,IOException{
 		User user=null; 
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 			PreparedStatement pre=con.prepareStatement("select *from user where account=?");
 				pre.setString(1, account);
@@ -173,7 +173,7 @@ public class SqlIInfo {
 	public static ResultSet search(String sql,String str) {
 		// TODO Auto-generated method stub
 		//String sql="select * from user where account=?";
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 		ResultSet res=null;
 		try {
@@ -197,7 +197,7 @@ public class SqlIInfo {
 	 */
 	public static ResultSet searchRecord(String sql, String name, String playtime) {
 		// TODO Auto-generated method stub
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 		ResultSet res=null;
 		try {
@@ -220,7 +220,7 @@ public class SqlIInfo {
 	public static ResultSet searchAll() {
 		// TODO Auto-generated method stub
 		//String sql="select * from user where account=?";
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 		String sql="select * from user";
 		ResultSet res=null;
@@ -242,7 +242,7 @@ public class SqlIInfo {
 	 */
 	public static boolean addUser(String sql,String[] str,int[] str1) {
 		// TODO Auto-generated method stub
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 		try {
 			PreparedStatement pre=con.prepareStatement(sql);//数据库操作对象
@@ -271,7 +271,7 @@ public class SqlIInfo {
 	 * @return boolean 
 	 */
 	public static boolean addRecord(String sql,String name,int integral,String playtime) {
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 		try {
 			PreparedStatement pre=con.prepareStatement(sql);//数据库操作对象
@@ -297,7 +297,7 @@ public class SqlIInfo {
 	 */
 	public static void modifyUser(int[] str1,String str[]) {
 		// TODO Auto-generated method stub
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 		String sql="update user set integral =?,flower=? where account=?";
 		try {
@@ -319,7 +319,7 @@ public class SqlIInfo {
 	 */
 	public static void modifyUser1(String sql,String str[]) {
 		// TODO Auto-generated method stub
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 		//String sql="update user set name =?,password=? where account=?";
 		try {
@@ -340,7 +340,7 @@ public class SqlIInfo {
 	 */
 	public static void delectUser(String sql,String str) {
 		// TODO Auto-generated method stub
-		ConnectionDatabase conn=new ConnectionDatabase();
+		DatabaseConnection conn=new DatabaseConnection();
 		Connection con=conn.getConnection();
 		//String sql="update user set name =?,password=? where account=?";
 		try {
@@ -360,7 +360,7 @@ public class SqlIInfo {
 	 */
 	public static boolean isExist(String account){
         try {
-        	ConnectionDatabase con = new ConnectionDatabase();
+        	DatabaseConnection con = new DatabaseConnection();
             ResultSet result = SqlIInfo.search("select * from user where account=?",account);
             if (result.next()) {
                 return true;

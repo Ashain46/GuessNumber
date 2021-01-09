@@ -1,4 +1,4 @@
-package cn.edu.jsu.wxq.itface;
+package cn.edu.jsu.wxq.gui;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
-import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
+import cn.edu.jsu.wxq.dao.database.DatabaseConnection;
 import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.user.User;
 

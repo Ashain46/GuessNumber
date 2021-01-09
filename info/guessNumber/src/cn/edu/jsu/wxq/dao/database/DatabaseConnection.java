@@ -19,7 +19,7 @@ import cn.edu.jsu.wxq.user.User;
  * 数据库连接
  *
  */
-public class ConnectionDatabase {
+public class DatabaseConnection {
 	
 		// TODO Auto-generated method stub
 	private static final String DATABASE_DRVIER = "com.mysql.cj.jdbc.Driver";
@@ -31,7 +31,7 @@ public class ConnectionDatabase {
 	private Connection con = null;
 	ResultSet res = null;
 	
-	public ConnectionDatabase() {
+	public DatabaseConnection() {
 		try {
 			Class.forName(DATABASE_DRVIER);
 			this.con = DriverManager.getConnection(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);

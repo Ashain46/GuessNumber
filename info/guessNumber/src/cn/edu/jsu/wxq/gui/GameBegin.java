@@ -1,4 +1,4 @@
-package cn.edu.jsu.wxq.itface;
+package cn.edu.jsu.wxq.gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -20,7 +20,7 @@ import org.w3c.dom.css.ElementCSSInlineStyle;
 
 import com.mysql.cj.xdevapi.Table;
 
-import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
+import cn.edu.jsu.wxq.dao.database.DatabaseConnection;
 import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.user.Record;
 import cn.edu.jsu.wxq.user.User;

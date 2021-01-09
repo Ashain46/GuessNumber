@@ -26,8 +26,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
-import cn.edu.jsu.wxq.itface.Administrator;
-import cn.edu.jsu.wxq.itface.PersonalInterface;
+import cn.edu.jsu.wxq.gui.Administrator;
+import cn.edu.jsu.wxq.gui.PersonalInterface;
 import cn.edu.jsu.wxq.user.PageController;
 import cn.edu.jsu.wxq.user.User;
 

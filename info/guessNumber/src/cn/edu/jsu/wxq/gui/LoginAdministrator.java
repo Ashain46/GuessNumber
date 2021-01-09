@@ -1,4 +1,4 @@
-package cn.edu.jsu.wxq.itface;
+package cn.edu.jsu.wxq.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

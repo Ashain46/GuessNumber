@@ -1,4 +1,4 @@
-package cn.edu.jsu.wxq.itface;
+package cn.edu.jsu.wxq.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Desktop;
@@ -11,9 +11,9 @@ import javax.swing.plaf.DesktopPaneUI;
 
 import cn.edu.jsu.wxq.operate.AllUser;
 import cn.edu.jsu.wxq.operate.DelectSql;
-import cn.edu.jsu.wxq.IO.ExcelToFile;
-import cn.edu.jsu.wxq.IO.ExcelToSql;
-import cn.edu.jsu.wxq.IO.MysqlExcel;
+import cn.edu.jsu.wxq.io.ExcelToFile;
+import cn.edu.jsu.wxq.io.ExcelToSql;
+import cn.edu.jsu.wxq.io.MysqlExcel;
 import cn.edu.jsu.wxq.operate.AllPlayRecord;
 import cn.edu.jsu.wxq.operate.RankFlower;
 import cn.edu.jsu.wxq.operate.RankIntegral;

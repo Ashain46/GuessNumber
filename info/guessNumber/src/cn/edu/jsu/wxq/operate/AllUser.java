@@ -14,9 +14,9 @@ import javax.swing.table.TableRowSorter;
 
 import org.apache.commons.collections4.map.StaticBucketMap;
 
-import cn.edu.jsu.wxq.IO.FileOperate;
 import cn.edu.jsu.wxq.dao.database.SqlIInfo;
-import cn.edu.jsu.wxq.itface.Administrator;
+import cn.edu.jsu.wxq.gui.Administrator;
+import cn.edu.jsu.wxq.io.FileOperate;
 import cn.edu.jsu.wxq.user.PageController;
 
 import javax.swing.JLabel;
@@ -74,7 +74,7 @@ public class AllUser extends JFrame {
 //		使用静态数据创建DefaultTableModel数据模型
 		
 		model = new DefaultTableModel(user, titles) {// 使用Vector装载表格数据模型，覆写getColumnClass方法，实现按各列的数据类型排序
-			public Class getColumnClass(int column) {//获取列的类型
+			/*public Class getColumnClass(int column) {//获取列的类型
 				Class returnValue;
 				if ((column >= 0) && (column < getColumnCount())) {
 					returnValue = getValueAt(0, column).getClass();
@@ -82,7 +82,7 @@ public class AllUser extends JFrame {
 					returnValue = Object.class;
 				}
 				return returnValue;
-			}
+			}*/
 
 		};
 		table = new JTable(model);// 使用DefaultTableModel数据模型实例化表格
