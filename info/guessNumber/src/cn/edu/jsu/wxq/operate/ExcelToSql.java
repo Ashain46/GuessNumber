@@ -48,7 +48,7 @@ public class ExcelToSql {
 
 			System.out.println("col = " + col + " rows = " + row);
 
-			for (i = 0; i < row; i++) {
+			for (i = 1; i < 100; i++) {
 					// 获得数据
 					String name = sheet.getCell(0, i).getContents();
 					String integral1 = sheet.getCell(1, i).getContents();
@@ -73,14 +73,13 @@ public class ExcelToSql {
 					 * 添加到数据库 如果数据库中的表设置主键 应该先判断插入的值是否在数据库中存在， 存在就更新，没有就直接插入
 					 * 
 					 */
-					//if (canInsert(name,playtime)) {		
+					if (canInsert(name,playtime)) {		
 						// 插入数据库
 						insertToDB(name,integral, playtime);
-					/*}
+					}
 					else {
-						System.out.println("插入失败");
 						count++;
-					}*/
+					}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +94,7 @@ public class ExcelToSql {
 	/**
 	 * 判断是否在user表,判断record是否有重复数据
 	 */
-	/*private static boolean canInsert(String name, String playtime) {
+	private static boolean canInsert(String name, String playtime) {
 		try {
 			ResultSet res1 = SqlIInfo.search("select * from user where name=?", name);
 			ResultSet res2 = SqlIInfo.searchRecord("select * from record where name=? and playtime=?", name,playtime);
@@ -107,7 +106,7 @@ public class ExcelToSql {
 		}
 		return false;
 	}
-*/
+
 	public static void main(String args[]) {
 		toReadRecordExcel(fileName1.toString());
 	}

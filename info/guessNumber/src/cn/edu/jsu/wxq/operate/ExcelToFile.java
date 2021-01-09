@@ -10,7 +10,7 @@ import jxl.Workbook;
 public class ExcelToFile {
 
 	/**
-	 * 获取Excel中所有Record的数据
+	 * 获取Excel中所有Record的数据并写入文本文件中
 	 * 
 	 */
 	public static void getAllRecordByExcel() {
@@ -43,7 +43,7 @@ public class ExcelToFile {
 		}
 	}
 	/**
-	 * 获取Excel中所有User的数据
+	 * 获取Excel中所有User的数据并写入文本文件中
 	 * 
 	 */
 	public static void getAllUserByExcel() {
