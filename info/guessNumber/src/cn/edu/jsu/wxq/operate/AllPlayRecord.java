@@ -21,7 +21,7 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import javax.swing.JTextField;
 
 public class AllPlayRecord extends JFrame {
@@ -58,7 +58,7 @@ public class AllPlayRecord extends JFrame {
 				Collections.addAll(titles, "昵称","积分","时间");//定义表格列头
 				Vector<Vector> record=new Vector<Vector>();//定义要返回的所有记录集合
 				String sql="select * from record";
-				record=SqlDao.getAll1(sql,null);
+				record=SqlIInfo.getAll1(sql,null);
 				
 				DefaultTableModel model = new DefaultTableModel(record, titles) {// 使用Vector装载表格数据模型，覆写getColumnClass方法，实现按各列的数据类型排序
 				};

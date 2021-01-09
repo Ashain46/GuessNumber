@@ -21,7 +21,7 @@ import org.w3c.dom.css.ElementCSSInlineStyle;
 import com.mysql.cj.xdevapi.Table;
 
 import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.user.Record;
 import cn.edu.jsu.wxq.user.User;
 import javax.swing.JButton;
@@ -194,9 +194,9 @@ public class GameBegin extends JFrame {
 									label_1.setText("本局积分:"+gameIntegral);
 									int []str1= {integral,flower};
 									String[] str= {user.getAccount()};
-									SqlDao.modifyUser(str1, str);
+									SqlIInfo.modifyUser(str1, str);
 									String sql="insert into record(name,integral,playtime) values(?,?,?)";
-									SqlDao.addRecord(sql,user.getName(), gameIntegral,Record.getTime());
+									SqlIInfo.addRecord(sql,user.getName(), gameIntegral,Record.getTime());
 									counter=1;
 									guessField.setText("");
 									guessField.requestFocus(); 

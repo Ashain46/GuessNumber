@@ -20,7 +20,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.user.PageController;
 import cn.edu.jsu.wxq.user.User;
 
@@ -72,7 +72,7 @@ public class PlayRecord extends JFrame {
 				Collections.addAll(titles, "昵称","积分","时间");//定义表格列头
 				Vector<Vector> record=new Vector<Vector>();//定义要返回的所有记录集合
 				String sql="select * from record where name=?";
-				record=SqlDao.getAll1(sql,name);
+				record=SqlIInfo.getAll1(sql,name);
 				
 				DefaultTableModel model = new DefaultTableModel(record, titles) {// 使用Vector装载表格数据模型，覆写getColumnClass方法，实现按各列的数据类型排序
 					public Class getColumnClass(int column) {//获取列的类型

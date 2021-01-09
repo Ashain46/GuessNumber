@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import org.junit.Test;
 
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.user.User;
 
 import javax.swing.JRadioButton;
@@ -172,7 +172,7 @@ public class ModifyInformation extends JFrame {
 						user1.setName(textField_1.getText());
 					}
 					String []str= {textField_1.getText(),user.getAccount()};
-					SqlDao.modifyUser1(sql,str);
+					SqlIInfo.modifyUser1(sql,str);
 				}
 			}
 		});

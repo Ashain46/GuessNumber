@@ -25,7 +25,7 @@ public class DataInsert {
 	public static void insertUser(Connection con,RandomDatabase rdd) throws SQLException {
 		
 		String sql="insert into user(name,account,password,integral,flower) values(?,?,?,?,?)";
-		SqlDao sqlDao=new SqlDao();
+		SqlIInfo sqlDao=new SqlIInfo();
 			PreparedStatement pre = con.prepareStatement(sql);
 			for (int i =1 ; i <=10000; i++) {
 			pre.setString(1, rdd.getName());
@@ -45,7 +45,7 @@ public class DataInsert {
      * @see SQLException
 	 */
 	public static void insertRecord(Connection con,RandomDatabase rdd) throws SQLException {
-		List<User> list=new SqlDao().getAllUser();
+		List<User> list=new SqlIInfo().getAllUser();
 		String sql="insert into record(name,integral,playtime) values(?,?,?)";
 			PreparedStatement pre = con.prepareStatement(sql);
 			for (int i =1 ; i <=10000; i++) {

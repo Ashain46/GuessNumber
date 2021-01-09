@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.operate.ModifyInformation;
 import cn.edu.jsu.wxq.operate.PlayRecord;
 import cn.edu.jsu.wxq.operate.RankFlower;

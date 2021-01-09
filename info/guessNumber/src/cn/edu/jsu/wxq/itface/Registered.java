@@ -8,7 +8,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.operate.FileOperate;
 import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
 
@@ -137,7 +137,7 @@ public class Registered extends JDialog {
 					String account=textField_1.getText();
 					String password2=textField_3.getText();
 					
-					if(!SqlDao.isAccount(account)||!SqlDao.isPassword(password1)) {
+					if(!SqlIInfo.isAccount(account)||!SqlIInfo.isPassword(password1)) {
 						JOptionPane.showMessageDialog(null, "账号或密码不合法");//弹出提示窗口
 						textField.setText("");
 						textField_1.setText("");
@@ -146,18 +146,18 @@ public class Registered extends JDialog {
 						textField.requestFocus();
 					}
 					else {
-					if(!SqlDao.isSame(password1, password2)) {
+					if(!SqlIInfo.isSame(password1, password2)) {
 							JOptionPane.showMessageDialog(null, "两次密码不一致,请重新输入");//弹出提示窗口
 							textField_3.setText("");
 							textField_2.setText("");
 							textField_2.requestFocus();
 						}
 					//判断数据库是否已存在该账号
-					else if(!SqlDao.isExist(account)) {
+					else if(!SqlIInfo.isExist(account)) {
 						 String[] str = new String[] {name, account, password1};
 						 int[] str1= {0,10};
 						 String sql="insert into user(name,account,password,integral,flower) values(?,?,?,?,?)";
-						 SqlDao.addUser(sql,str,str1);
+						 SqlIInfo.addUser(sql,str,str1);
 						 String user=name+"\t"+account+"\t"+password1+"0\t10\r\n";
 						 FileOperate.addUser(user);
 						 //注册成提示界面
@@ -196,7 +196,7 @@ public class Registered extends JDialog {
 				String account=textField_1.getText();
 				String password2=textField_3.getText();
 				//连接数据库
-				if(!SqlDao.isAccount(account)||!SqlDao.isPassword(password1)) {
+				if(!SqlIInfo.isAccount(account)||!SqlIInfo.isPassword(password1)) {
 					JOptionPane.showMessageDialog(null, "账号或密码不合法");//弹出提示窗口
 					textField.setText("");
 					textField_1.setText("");
@@ -205,18 +205,18 @@ public class Registered extends JDialog {
 					textField.requestFocus();
 				}
 				else {
-				if(!SqlDao.isSame(password1, password2)) {
+				if(!SqlIInfo.isSame(password1, password2)) {
 						JOptionPane.showMessageDialog(null, "两次密码不一致,请重新输入");//弹出提示窗口
 						textField_3.setText("");
 						textField_2.setText("");
 						textField_2.requestFocus();
 					}
 				//判断数据库是否已存在该账号
-				else if(!SqlDao.isExist(account)) {
+				else if(!SqlIInfo.isExist(account)) {
 					 String[] str = new String[] {name, account, password1};
 					 int []str1= {0,10};
 					 String sql="insert into user(name,account,password,integral,flower) values(?,?,?,?,?)";
-					 SqlDao.addUser(sql,str,str1);
+					 SqlIInfo.addUser(sql,str,str1);
 					 String user=name+"\t"+account+"\t"+password1+"0\t10\r\n";
 					 FileOperate.addUser(user);
 					 //注册成提示界面

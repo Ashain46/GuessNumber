@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Vector;
 
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.user.Record;
 import cn.edu.jsu.wxq.user.User;
 import jxl.Workbook;
@@ -18,7 +18,7 @@ import jxl.write.WritableWorkbook;
  */
 public class MysqlExcel {
 	// 创建可写入的Excel工作薄
-	private static String fileName = "E:\\数字猜一猜-游戏记录表.xls";
+	private static String fileName = "E:\\数字猜一猜-游戏记录表1.xls";
 	private static String fileName2 = "E:\\数字猜一猜-用户表.xls";
 	
 	public static void toWriteExcel1() {
@@ -41,7 +41,7 @@ public class MysqlExcel {
     		//导出数据中所有数据
     		String sqlTableName = "record";
     		
-    		List<Record> list = SqlDao.getAllRecord();
+    		List<Record> list = SqlIInfo.getAllRecord();
     		
     		//要插入到的Excel表格的行号，默认从0开始
     		Label labelName = new Label(0, 0 , "name");
@@ -97,7 +97,7 @@ public class MysqlExcel {
     		//导出数据中所有数据
     		String sqlTableName = "user";
     		
-    		List<User> list = SqlDao.getAllUser();
+    		List<User> list = SqlIInfo.getAllUser();
     		
     		//要插入到的Excel表格的行号，默认从0开始
     		Label labelName = new Label(0, 0 , "name");

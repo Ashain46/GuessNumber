@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 import org.junit.Test;
 
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 /**
  * 设置页码
  * @author 文雪茜
@@ -24,7 +24,7 @@ public class PageController {
 	String str2="flower";
 	{// 初始化代码块
 		if(PageController.bigList==null) {
-			PageController.bigList=SqlDao.getAll();// 调用查询数据库的方法，返回所有的行
+			PageController.bigList=SqlIInfo.getAll();// 调用查询数据库的方法，返回所有的行
 		}
 		//获取总页数
 		if(bigList.size()%countPerpage==0) {
@@ -38,7 +38,7 @@ public class PageController {
 	 */
 	public void initSort1() {
 		String sql="select * from user order by integral DESC, flower DESC limit 0,200";
-			PageController.bigList=SqlDao.getSort(sql);// 调用查询数据库的方法，返回所有的行
+			PageController.bigList=SqlIInfo.getSort(sql);// 调用查询数据库的方法，返回所有的行
 			//获取总页数
 			if(bigList.size()%countPerpage==0) {
 				pageCount=bigList.size()/countPerpage;
@@ -52,7 +52,7 @@ public class PageController {
 	 */
 	public void initSort2() {
 		String sql="select * from user order by flower DESC,integral DESC limit 0,200";
-		PageController.bigList=SqlDao.getSort(sql);// 调用查询数据库的方法，返回所有的行
+		PageController.bigList=SqlIInfo.getSort(sql);// 调用查询数据库的方法，返回所有的行
 		//获取总页数
 				if(bigList.size()%countPerpage==0) {
 					pageCount=bigList.size()/countPerpage;
@@ -82,7 +82,7 @@ public class PageController {
 	 */
 	public Vector<Vector> getAllUser() {
 		Vector<Vector> rows=new Vector<Vector>();//定义要返回的所有记录集合
-		rows=SqlDao.getAll();
+		rows=SqlIInfo.getAll();
 		return rows;
 	}
 	/**
@@ -92,7 +92,7 @@ public class PageController {
 	public Vector<Vector> getAllRecord() {
 		Vector<Vector> rows=new Vector<Vector>();//定义要返回的所有记录集合
 		String sql="select * from record";
-		rows=SqlDao.getAll1(sql,null);
+		rows=SqlIInfo.getAll1(sql,null);
 		return rows;
 	}
 	/**

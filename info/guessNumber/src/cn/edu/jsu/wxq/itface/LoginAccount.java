@@ -23,7 +23,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
 import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
-import cn.edu.jsu.wxq.dao.database.SqlDao;
+import cn.edu.jsu.wxq.dao.database.SqlIInfo;
 import cn.edu.jsu.wxq.user.User;
 
 import javax.swing.JPasswordField;
@@ -130,7 +130,7 @@ public class LoginAccount extends JFrame {
 			    if(e.getKeyChar()==KeyEvent.VK_ENTER) {//如果是回车键
 			    	String account=textField_1.getText();
 					String password=new String(passwordField.getPassword());
-					if (!SqlDao.isExist(account)) {
+					if (!SqlIInfo.isExist(account)) {
 						JOptionPane.showMessageDialog(null, "该账号不存在");//弹出提示窗口
 						textField_1.setText("");
 						passwordField.setText("");
@@ -140,7 +140,7 @@ public class LoginAccount extends JFrame {
 					else {
 					User user=new User();
 					try {
-						user=SqlDao.selectUser(account);
+						user=SqlIInfo.selectUser(account);
 					} catch (SQLException e2) {
 						// TODO Auto-generated catch block
 						e2.printStackTrace();
@@ -181,7 +181,7 @@ public class LoginAccount extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String account=textField_1.getText();
 				String password=new String(passwordField.getPassword());
-				if (!SqlDao.isExist(account)) {
+				if (!SqlIInfo.isExist(account)) {
 					JOptionPane.showMessageDialog(null, "该账号不存在");//弹出提示窗口
 					textField_1.setText("");
 					passwordField.setText("");
@@ -191,7 +191,7 @@ public class LoginAccount extends JFrame {
 				else {
 				User user=new User();
 				try {
-					user=SqlDao.selectUser(account);
+					user=SqlIInfo.selectUser(account);
 				} catch (SQLException e2) {
 					// TODO Auto-generated catch block
 					e2.printStackTrace();
