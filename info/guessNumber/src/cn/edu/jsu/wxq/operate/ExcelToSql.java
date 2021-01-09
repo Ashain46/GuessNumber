@@ -15,7 +15,7 @@ import jxl.Sheet;
 
 import jxl.Workbook;
 
-public class ExcelMysql {
+public class ExcelToSql {
 	private static StringBuffer fileName1 = new StringBuffer("E:\\数字猜一猜-游戏记录表.xls");
 	//private static StringBuffer fileName2 = new StringBuffer("E:\\数字猜一猜-用户表.xls");
 	// 返回有几条重复或者出错的数据
@@ -32,7 +32,7 @@ public class ExcelMysql {
 	 * 
 
 	 */
-	private static void getAllRecordByExcel() {
+	public static void getAllRecordByExcel() {
 
 		Record data = new Record();
 		try {

@@ -19,21 +19,28 @@ import cn.edu.jsu.wxq.user.User;
  * 注册时,如果注册成功,将注册信息存入文本文件中
  */
 public class FileOperate {
-	final static File file = new File("e:/usertest.txt");
+	final static File file1 = new File("e:/usertest.txt");
+	final static File file2 = new File("e:/recordtest.txt");
 	/**
 	 * 增加用户信息到文本文件
 	 * @param user the String用户信息
 	 * @return boolean boolean是用来返回
 	 */
 	  public static boolean addUser(String user) {//定义增加用户的方法，user为内容
-		    try(FileWriter fw=new FileWriter(file,true)){
+		    try(FileWriter fw=new FileWriter(file1,true)){
 		      fw.write(user);
+		    }catch(Exception e1) {e1.printStackTrace();}
+		    return true;
+		}
+	  public static boolean addRecord(String record) {//定义增加用户的方法，user为内容
+		    try(FileWriter fw=new FileWriter(file2,true)){
+		      fw.write(record);
 		    }catch(Exception e1) {e1.printStackTrace();}
 		    return true;
 		}
 	public static void initTable(DefaultTableModel model) {
 		// TODO Auto-generated method stub
-		try (FileReader fr= new FileReader(file);
+		try (FileReader fr= new FileReader(file1);
 		     BufferedReader br=new BufferedReader(fr);){//实例化缓冲流
 			 String row=null;
 	      while((row=br.readLine())!=null) {//按行读取数据
@@ -51,7 +58,7 @@ public class FileOperate {
 	 */
 	public static Vector<Vector> initTable1() {//初始化表格数据
 		  Vector<Vector> rows=new Vector<Vector>();//创建行数据容器
-		  try(FileReader fr=new FileReader(file);
+		  try(FileReader fr=new FileReader(file1);
 		      BufferedReader br=new BufferedReader(fr);){//使用缓冲流读取文件
 		    String line=null;
 		    while((line=br.readLine())!=null) {//按行读取
