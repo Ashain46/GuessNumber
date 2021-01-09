@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import cn.edu.jsu.wxq.dao.database.SqlIInfo;
-import cn.edu.jsu.wxq.operate.FileOperate;
+import cn.edu.jsu.wxq.IO.FileOperate;
 import cn.edu.jsu.wxq.dao.database.ConnectionDatabase;
 
 import javax.swing.JLabel;

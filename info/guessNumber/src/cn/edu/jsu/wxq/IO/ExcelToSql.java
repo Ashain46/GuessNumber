@@ -1,4 +1,4 @@
-package cn.edu.jsu.wxq.operate;
+package cn.edu.jsu.wxq.IO;
 
 import java.io.File;
 import java.sql.ResultSet;
@@ -85,6 +85,13 @@ public class ExcelToSql {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * 将数据添加到record表中
+	 * @param name the String用户名
+	 * @param integral 积分
+	 * @param playtime the String游戏时间
+	 */
 	private static void insertToDB(String name,int integral,String playtime) {
 		String sql = "insert into record (name, integral, playtime) values(?,?,?)";
 		// 添加到数据库
@@ -93,6 +100,9 @@ public class ExcelToSql {
 
 	/**
 	 * 判断是否在user表,判断record是否有重复数据
+	 * @return 判断是否
+	 * @param name the String是用户名
+	 * @param playtime the String是游戏时间
 	 */
 	private static boolean canInsert(String name, String playtime) {
 		try {

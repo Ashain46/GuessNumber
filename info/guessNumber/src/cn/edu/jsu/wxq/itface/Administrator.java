@@ -10,9 +10,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.DesktopPaneUI;
 
 import cn.edu.jsu.wxq.operate.AllUser;
-import cn.edu.jsu.wxq.operate.ExcelToFile;
-import cn.edu.jsu.wxq.operate.ExcelToSql;
-import cn.edu.jsu.wxq.operate.MysqlExcel;
+import cn.edu.jsu.wxq.operate.DelectSql;
+import cn.edu.jsu.wxq.IO.ExcelToFile;
+import cn.edu.jsu.wxq.IO.ExcelToSql;
+import cn.edu.jsu.wxq.IO.MysqlExcel;
 import cn.edu.jsu.wxq.operate.AllPlayRecord;
 import cn.edu.jsu.wxq.operate.RankFlower;
 import cn.edu.jsu.wxq.operate.RankIntegral;
@@ -162,7 +163,7 @@ public class Administrator extends JFrame {
 			}
 		});
 		button_5.setFont(new Font("楷体", Font.PLAIN, 20));
-		button_5.setBounds(42, 293, 210, 42);
+		button_5.setBounds(42, 279, 210, 42);
 		contentPane.add(button_5);
 		button_5.setContentAreaFilled(false);
 		button_5.setBorderPainted(false);
@@ -176,7 +177,7 @@ public class Administrator extends JFrame {
 			}
 		});
 		button_6.setFont(new Font("楷体", Font.PLAIN, 20));
-		button_6.setBounds(359, 293, 210, 42);
+		button_6.setBounds(359, 279, 210, 42);
 		contentPane.add(button_6);
 		button_6.setContentAreaFilled(false);
 		button_6.setBorderPainted(false);
@@ -206,10 +207,23 @@ public class Administrator extends JFrame {
 			}
 		});
 		btnExcel_1.setFont(new Font("楷体", Font.PLAIN, 20));
-		btnExcel_1.setBounds(186, 243, 221, 47);
+		btnExcel_1.setBounds(186, 237, 221, 47);
 		contentPane.add(btnExcel_1);
 		btnExcel_1.setContentAreaFilled(false);
 		btnExcel_1.setBorderPainted(false);
+		
+		JButton btnS = new JButton("删除数据库信息");
+		btnS.setFont(new Font("楷体", Font.PLAIN, 20));
+		btnS.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DelectSql delectSql=new DelectSql();
+				delectSql.setVisible(true);
+			}
+		});
+		btnS.setBounds(197, 316, 193, 42);
+		contentPane.add(btnS);
+		btnS.setContentAreaFilled(false);
+		btnS.setBorderPainted(false);
 		
 		JLabel label_9 = new JLabel("");
 		label_9.setIcon(new ImageIcon(Administrator.class.getResource("/img/zzpic17012.jpg")));
@@ -223,7 +237,7 @@ public class Administrator extends JFrame {
 		
 		JLabel label_10 = new JLabel("");
 		label_10.setIcon(new ImageIcon(Administrator.class.getResource("/img/zzpic17012.jpg")));
-		label_10.setBounds(197, 248, 193, 42);
+		label_10.setBounds(197, 237, 193, 42);
 		contentPane.add(label_10);
 		
 		JLabel label1 = new JLabel("");
@@ -259,12 +273,17 @@ public class Administrator extends JFrame {
 		
 		JLabel label_6 = new JLabel("");
 		label_6.setIcon(new ImageIcon(Administrator.class.getResource("/img/xpic7629.jpg")));
-		label_6.setBounds(42, 293, 210, 42);
+		label_6.setBounds(42, 279, 210, 42);
 		contentPane.add(label_6);
+		
+		JLabel label_12 = new JLabel("");
+		label_12.setIcon(new ImageIcon(Administrator.class.getResource("/img/zzpic17012.jpg")));
+		label_12.setBounds(197, 316, 193, 42);
+		contentPane.add(label_12);
 		
 		JLabel label_7 = new JLabel("");
 		label_7.setIcon(new ImageIcon(Administrator.class.getResource("/img/xpic7629.jpg")));
-		label_7.setBounds(359, 293, 210, 42);
+		label_7.setBounds(359, 279, 210, 42);
 		contentPane.add(label_7);
 		
 		JLabel label_11 = new JLabel("");

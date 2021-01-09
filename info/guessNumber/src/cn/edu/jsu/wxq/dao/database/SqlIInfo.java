@@ -338,15 +338,15 @@ public class SqlIInfo {
 	 * @param sql the String传递sql语句
 	 * @param str the String[]传递修改的信息
 	 */
-	public static void delectUser1(String sql,String str[]) {
+	public static void delectUser(String sql,String str) {
 		// TODO Auto-generated method stub
 		ConnectionDatabase conn=new ConnectionDatabase();
 		Connection con=conn.getConnection();
 		//String sql="update user set name =?,password=? where account=?";
 		try {
 			PreparedStatement pre=con.prepareStatement(sql);//数据库操作对象
-				pre.setString(1, str[0]);
-				pre.executeUpdate();
+				pre.setString(1, str);
+				pre.execute();
 			} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

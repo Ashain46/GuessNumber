@@ -47,10 +47,6 @@ public interface SqlDao {
 	 * 根据账号查询user表
 	 * @return user the User是用来返回查询用户表的结果
 	 * @param account the String是用来传递用户账号
-	 * @exception SQLException On input error.
-     * @see SQLException
-     * @exception IOException On input error.
-     * @see IOException
 	 */
 	public User selectUser(String account);
 	/**

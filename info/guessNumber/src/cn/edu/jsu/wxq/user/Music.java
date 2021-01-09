@@ -18,6 +18,9 @@ public class Music extends Thread {
 	public String getFileName() {
 		return fileName;
 	}
+	/**
+	 * 播放音乐
+	 */
 	public void run() {
 		String fileName=getFileName();
 				//"C:\\Users\\86135\\Music\\大鱼.mp3";//文件路径

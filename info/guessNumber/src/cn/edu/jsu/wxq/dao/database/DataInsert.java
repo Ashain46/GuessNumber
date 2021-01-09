@@ -71,8 +71,8 @@ public class DataInsert {
 			e.printStackTrace();
 		}
 		try {
-			//insertUser(connection, randomDatabase);
-			insertRecord(connection, randomDatabase);
+			insertUser(connection, randomDatabase);
+			//insertRecord(connection, randomDatabase);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
